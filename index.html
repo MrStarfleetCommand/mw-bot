@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>MediaWiki Bot</title>
+		<link rel="stylesheet" href="/styles.css">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<h1>MediaWiki Bot</h1>
+		<form id="bot-form">
+			<div>
+				<label for="bot-wiki">Wiki</label>
+				<select required name="wiki" id="bot-wiki">
+					<option value="memory-alpha.fandom.com">Memory Alpha</option>
+					<option value="littlebear.fandom.com">Little Bear Wiki</option>
+				</select>
+			</div>
+			<fieldset id="bot-selection-method">
+				<legend>Selection method</legend>
+				<div>
+					<input type="radio" name="method" id="bot-namespaces" value="namespaces" checked required>
+					<label for="bot-namespaces">Namespaces</label>
+				</div>
+				<div>
+					<input type="radio" name="method" id="bot-categories" value="categories">
+					<label for="bot-categories">Categories</label>
+				</div>
+				<div>
+					<input type="radio" name="method" id="bot-backlinks" value="backlinks">
+					<label for="bot-backlinks">Backlinks</label>
+				</div>
+				<div>
+					<input type="radio" name="method" id="bot-external-links" value="extLinks">
+					<label for="bot-external-links">External links</label>
+				</div>
+				<div>
+					<input type="radio" name="method" id="bot-transclusions" value="transclusions">
+					<label for="bot-transclusions">Transclusions</label>
+				</div>
+				<div>
+					<input type="radio" name="method" id="bot-file-usage" value="files">
+					<label for="bot-file-usage">File usage</label>
+				</div>
+				<div>
+					<input type="radio" name="method" id="bot-loose-pages" value="pages">
+					<label for="bot-loose-pages">Loose pages</label>
+				</div>
+			</fieldset>
+			<fieldset id="bot-mode">
+				<legend>Mode</legend>
+				<div>
+					<input type="radio" name="mode" id="bot-edit" value="edit" checked required>
+					<label for="bot-edit">Edit</label>
+				</div>
+				<div>
+					<input type="radio" name="mode" id="bot-cleanup" value="cleanup">
+					<label for="bot-cleanup">Cleanup</label>
+				</div>
+				<div>
+					<input type="radio" name="mode" id="bot-move" value="move">
+					<label for="bot-move">Move</label>
+				</div>
+			</fieldset>
+			<fieldset id="bot-options">
+				<legend>Options</legend>
+				<div>
+					<input type="checkbox" name="demo" id="bot-demo-mode">
+					<label for="bot-demo-mode">Demo mode</label>
+				</div>
+			</fieldset>
+			<div>
+				<label for="bot-find">Find</label>
+				<textarea id="bot-find" name="find" rows="4" required></textarea>
+			</div>
+			<div>
+				<label for="bot-replace">Replace</label>
+				<textarea id="bot-replace" name="replace" rows="4"></textarea>
+			</div>
+			<div>
+				<label for="bot-entries">Entries</label>
+				<textarea id="bot-entries" name="entries" rows="4" required></textarea>
+			</div>
+			<div>
+				<label for="bot-prefix">Prefix</label>
+				<input type="text" name="prefix" id="bot-prefix" disabled>
+			</div>
+			<div>
+				<label for="bot-suffix">Suffix</label>
+				<input type="text" name="suffix" id="bot-suffix" disabled>
+			</div>
+			<div>
+				<label for="bot-summary">Summary</label>
+				<input type="text" name="summary" id="bot-summary" required>
+			</div>
+			<div>
+				<label for="bot-log">Log</label>
+				<textarea id="bot-log" name="log" rows="4" disabled></textarea>
+			</div>
+			<div>
+				<button class="button-action-progressive button-weight-primary" id="bot-start" value="start" type="submit">Start</button>
+				<button class="button-action-destructive button-weight-quiet" id="bot-cancel" value="cancel" type="button" disabled>Cancel</button>
+				<button class="button-action-destructive button-weight-quiet" id="bot-clear-log" value="clear-log" type="button" disabled>Clear log</button>
+			</div>
+		</form>
+		<script src="script.js"></script>
+	</body>
+</html>
